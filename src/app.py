@@ -29,11 +29,11 @@ with columna_color:
 
 # En la segunda columna, permite al usuario activar/desactivar la visualización de nombres en el gráfico
 with columna_mostrar_nombres:
-   mostrar_nombres = st.toggle('Mostrar el nombre')
+   mostrar_nombres = st.checkbox('Mostrar el nombre')
 
 # En la tercera columna, permite al usuario activar/desactivar la visualización de salarios en las barras del gráfico
 with columna_mostrar_salarios:
-   mostrar_salarios = st.toggle('Mostrar el sueldo en la barra')
+   mostrar_salarios = st.checkbox('Mostrar el sueldo en la barra')
 
 # Extrae los nombres y salarios de los empleados para usar en el gráfico
 nombres_empleados = datos_empleados['full name']
