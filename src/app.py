@@ -25,15 +25,15 @@ columna_color, columna_mostrar_nombres, columna_mostrar_salarios = st.columns(3)
 
 # En la primera columna, permite al usuario elegir el color de las barras en el gráfico
 with columna_color:
-    color_barras = st.color_picker('Elige un color para las barras', '#3475B3')
+   color_barras = st.color_picker('Elige un color para las barras', '#3475B3')
 
 # En la segunda columna, permite al usuario activar/desactivar la visualización de nombres en el gráfico
 with columna_mostrar_nombres:
-    mostrar_nombres = st.toggle('Mostrar el nombre')
+   mostrar_nombres = st.toggle('Mostrar el nombre')
 
 # En la tercera columna, permite al usuario activar/desactivar la visualización de salarios en las barras del gráfico
 with columna_mostrar_salarios:
-    mostrar_salarios = st.toggle('Mostrar el sueldo en la barra')
+   mostrar_salarios = st.toggle('Mostrar el sueldo en la barra')
 
 # Extrae los nombres y salarios de los empleados para usar en el gráfico
 nombres_empleados = datos_empleados['full name']
@@ -51,7 +51,7 @@ if mostrar_salarios:
    barras = ejes.barh(nombres_empleados, sueldos_empleados, color=color_barras)
    # Agrega etiquetas de salario en cada barra
    for barra, salario in zip(barras, sueldos_empleados):
-        ejes.text(barra.get_width(), barra.get_y() + barra.get_height() / 2, f'{salario} €', va='center', ha='left',
+      ejes.text(barra.get_width(), barra.get_y() + barra.get_height()/2, f'{salario} €', va='center', ha='left',
                   fontsize=10, color='black')
 
 # Vuelve a crear las barras horizontales para asegurar que estén presentes en el gráfico
