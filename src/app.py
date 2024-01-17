@@ -50,14 +50,9 @@ if mostrar_nombres == False:
 if mostrar_salarios:
    barras = ejes.barh(nombres_empleados, sueldos_empleados, color=color_barras)
    # Agrega etiquetas de salario en cada barra
-   for indice, barra in enumerate(barras):
-      salario = sueldos_empleados[indice]
-      ejes.annotate(f'{salario} €',
-                     xy=(barra.get_width(), barra.get_y() + barra.get_height() / 2),
-                     xytext=(5, 0),  # Ajusta la posición del texto
-                     textcoords='offset points',
-                     va='center', ha='left',
-                     fontsize=10, color='black')
+   for barra, salario in zip(barras, sueldos_empleados):
+        ejes.text(barra.get_width(), barra.get_y() + barra.get_height() / 2, f'{salario} €', va='center', ha='left',
+                  fontsize=10, color='black')
 
 # Vuelve a crear las barras horizontales para asegurar que estén presentes en el gráfico
 ejes.barh(nombres_empleados, sueldos_empleados, color=color_barras)
