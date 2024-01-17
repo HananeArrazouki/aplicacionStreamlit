@@ -17,7 +17,8 @@ datos_empleados = pd.read_csv('csv/employees.csv')
 st.dataframe(datos_empleados)
 
 # Agrega una línea divisoria para mejorar la presentación
-st.divider()
+# st.divider()
+st.markdown("")
 
 # Divide el espacio en tres columnas para personalizar la visualización del gráfico
 columna_color, columna_mostrar_nombres, columna_mostrar_salarios = st.columns(3)
